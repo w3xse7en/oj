@@ -42,13 +42,6 @@ int main(){
 		stay[id]=0;
 	}
 	sort(v.begin(),v.end(),cmp);
-	vector<Info>::iterator it,temp;
-	for(it=v.begin();it!=v.end();it++){
-		Info info = plate[it->id];
-		if(info.time==-1){
-			plate[it->id]=*it;
-		}
-	}
 	int maxtime=0;
 	for(int i=0;i<v.size();i++){
 		Info info = plate[v[i].id];
