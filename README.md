@@ -1,2 +1,6 @@
+# LeetCode
+https://leetcode.com/
+
 # PAT
-https://www.patest.cn/contests/pat-a-practise
+https://www.patest.cn/
+
