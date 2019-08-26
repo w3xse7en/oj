@@ -11,7 +11,6 @@ type People interface {
 type Student struct{}
 
 func (stu *Student) Show() {
-
 }
 
 func live() People {
