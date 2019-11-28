@@ -1,2 +1,4 @@
 # Management files of goLand project
 .idea
+*.exe
+*.json
