@@ -9,7 +9,6 @@ func getRow(rowIndex int) []int {
 }
 
 func getRowOrigin(rowIndex int) []int {
-
 	result := [][]int{{1}}
 	if rowIndex == 0 {
 		return result[0]
