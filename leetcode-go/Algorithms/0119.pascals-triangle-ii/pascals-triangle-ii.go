@@ -13,6 +13,7 @@ func getRowOrigin(rowIndex int) []int {
 	if rowIndex == 0 {
 		return result[0]
 	}
+
 	for i := 2; i <= rowIndex; i++ {
 		line := make([]int, i)
 		for k := range line {
