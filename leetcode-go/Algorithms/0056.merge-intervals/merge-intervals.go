@@ -12,6 +12,7 @@ func merge(intervals [][]int) [][]int {
 	if len(intervals) == 0 {
 		return nil
 	}
+
 	sortMap := make(map[*SortInt]int)
 	sortInt := make([]*SortInt, 0)
 	for k, v := range intervals {
