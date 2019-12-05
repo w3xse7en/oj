@@ -4,6 +4,7 @@ func generate(numRows int) [][]int {
 	if numRows == 0 {
 		return nil
 	}
+
 	result := [][]int{{1}}
 	for i := 2; i <= numRows; i++ {
 		line := make([]int, i)
