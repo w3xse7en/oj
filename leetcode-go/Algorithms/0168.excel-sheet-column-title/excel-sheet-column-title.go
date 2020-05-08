@@ -1,6 +1,6 @@
 package problem0168
 
-// 注意下表从0开始
+// 注意下标从0开始
 // A的实际映射是0 而不是1
 // Z的映射是25 而不是26
 func convertToTitle(n int) string {
