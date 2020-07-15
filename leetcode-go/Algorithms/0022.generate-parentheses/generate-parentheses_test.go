@@ -1,4 +1,4 @@
-package problem0050
+package problem0022
 
 import (
 	"testing"
@@ -9,28 +9,25 @@ import (
 // tcs is testcase slice
 var tcs = []struct {
 	n   int
-	ans int
+	ans []string
 }{
-	{25, 2},
-	{9, 1},
-	{12258, 5},
-	{18580, 2},
-	{1212429444, 8},
+	{4, []string{}},
+
 	// 可以有多个 testcase
 }
 
-func Test_myPow(t *testing.T) {
+func Test_generateParenthesis(t *testing.T) {
 	a := assert.New(t)
 
 	for _, tc := range tcs {
-		a.Equal(tc.ans, translateNum(tc.n), "输入:%v", tc)
+		a.Equal(tc.ans, generateParenthesis(tc.n), "输入:%v", tc)
 	}
 }
 
-func Benchmark_myPow(b *testing.B) {
+func Benchmark_generateParenthesis(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, tc := range tcs {
-			translateNum(tc.n)
+			generateParenthesis(tc.n)
 		}
 	}
 }
