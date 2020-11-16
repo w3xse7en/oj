@@ -1,10 +1,21 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+//func main() {
+//	fmt.Println('a' - 'A')
+//	fmt.Println("hello world")
+//}
+
+type People struct {
+	Name string
+}
+
+func (p *People) String() string {
+	return fmt.Sprintf("%v", p)
+}
 
 func main() {
-	fmt.Println('a' - 'A')
-	fmt.Println("hello world")
+	p := &People{}
+	p.String()
 }
