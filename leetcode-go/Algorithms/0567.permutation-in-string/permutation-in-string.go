@@ -4,39 +4,39 @@ func checkInclusion(s1 string, s2 string) bool {
 	if len(s1) > len(s2) {
 		return false
 	}
-	match := 0
-	s1Mp, winMp := map[byte]int{}, map[byte]int{}
-	for i := range s1 {
-		s1Mp[s1[i]]++
-	}
 
-	for i := 0; i < len(s1); i++ {
-		v := s2[i]
+	i, j := 0, 0
+
+	needMp := map[byte]int{}
+	for k := range s1 {
+		needMp[s1[k]]++
+	}
+	match := 0
+	winMp := map[byte]int{}
+	for ; j < len(s1); j++ {
+		v := s2[j]
 		winMp[v]++
-		if _, ok := s1Mp[v]; ok && winMp[v] == s1Mp[v] {
+		if winMp[v] == needMp[v] {
 			match++
 		}
 	}
-
-	i, j := 0, len(s1)
-	for {
-		if match == len(s1Mp) {
-			return true
-		}
-		if j >= len(s2) {
-			break
-		}
+	if match == len(needMp) {
+		return true
+	}
+	for j < len(s2) {
 		pop := s2[i]
-		winMp[pop]--
-		if _, ok := s1Mp[pop]; ok && winMp[pop] < s1Mp[pop] {
+		push := s2[j]
+		if winMp[pop] == needMp[pop] {
 			match--
 		}
-		push := s2[j]
+		winMp[pop]--
 		winMp[push]++
-		if _, ok := s1Mp[push]; ok && winMp[push] == s1Mp[push] {
+		if winMp[push] == needMp[push] {
 			match++
 		}
-
+		if match == len(needMp) {
+			return true
+		}
 		i++
 		j++
 	}

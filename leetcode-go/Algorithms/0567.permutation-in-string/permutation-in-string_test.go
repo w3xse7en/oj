@@ -12,12 +12,12 @@ var tcs = []struct {
 	s2  string
 	ans bool
 }{
-	{"abcdxabcde", "abcdeabcdx", true},
-	{"ab", "eidboaoo", false},
-	{"abc", "bbbca", true},
-	{"ab", "ab", true},
-	{"adc", "dcda", true},
+	{"a", "a", true},
+	{"aa", "a", false},
+	{"aa", "c", false},
+	{"a", "aa", true},
 	{"ab", "eidbaooo", true},
+	{"ab", "eidboaoo", false},
 
 	// 可以有多个 testcase
 }
