@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-func threeSum(nums []int) [][]int {
+func threeSum1(nums []int) [][]int {
 	var result [][]int
 	sort.Ints(nums)
 	// fmt.Println(nums)

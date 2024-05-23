@@ -1,6 +1,6 @@
 package problem0167
 
-func twoSum(numbers []int, target int) []int {
+func twoSum1(numbers []int, target int) []int {
 	for i, number := range numbers {
 		j := half(numbers[i+1:], target-number)
 		if j != -1 {
