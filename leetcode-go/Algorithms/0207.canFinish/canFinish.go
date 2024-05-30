@@ -10,6 +10,7 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 			next[v[1]] = []int{v[0]}
 		}
 	}
+
 	vis := make([]int, numCourses)
 	for v := range next {
 		if !checkLoop(vis, v, next) {
