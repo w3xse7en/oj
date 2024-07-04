@@ -76,3 +76,16 @@ func Ints2ListWithCycle(nums []int, pos int) *ListNode {
 	tail.Next = c
 	return head
 }
+
+func BuildList(is []int) *ListNode {
+	if len(is) == 0 {
+		return nil
+	}
+	node := &ListNode{Val: is[0]}
+	for k, v := range is {
+		if k > 0 {
+			node.Next = &ListNode{Val: v}
+		}
+	}
+	return node
+}

@@ -4,7 +4,7 @@ import "github.com/w3xse7en/oj/leetcode-go/kit"
 
 type ListNode = kit.ListNode
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEnd1(head *ListNode, n int) *ListNode {
 	if head == nil {
 		return head
 	}
