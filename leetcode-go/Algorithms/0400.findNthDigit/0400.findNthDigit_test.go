@@ -1,4 +1,4 @@
-package Algorithms
+package _400_findNthDigit
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package Algorithms
+package _400_findNthDigit
 
 func findNthDigit(n int) int {
 	var list = []int{1}

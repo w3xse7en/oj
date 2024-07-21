@@ -4,7 +4,7 @@ import "github.com/w3xse7en/oj/leetcode-go/kit"
 
 type ListNode = kit.ListNode
 
-func reverseBetween(head *ListNode, m int, n int) *ListNode {
+func reverseBetween1(head *ListNode, m int, n int) *ListNode {
 	var prem, mnode, nnode, aftern, tail *ListNode
 	for i, node := 1, head; node != nil && i <= n+1; i++ {
 		next := node.Next
