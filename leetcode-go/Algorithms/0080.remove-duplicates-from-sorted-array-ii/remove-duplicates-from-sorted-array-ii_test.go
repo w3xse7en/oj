@@ -25,7 +25,7 @@ var tcs = []struct {
 	// 可以有多个 testcase
 }
 
-func Test_removeDuplicates(t *testing.T) {
+func Test_removeDuplicates1(t *testing.T) {
 	a := assert.New(t)
 
 	for _, tc := range tcs {

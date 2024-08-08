@@ -4,7 +4,7 @@ type key struct {
 	a, b string
 }
 
-func calcEquation(equations [][]string, values []float64, queries [][]string) []float64 {
+func calcEquation1(equations [][]string, values []float64, queries [][]string) []float64 {
 	hash := map[key]float64{}
 	for i, equation := range equations {
 		a, b := equation[0], equation[1]

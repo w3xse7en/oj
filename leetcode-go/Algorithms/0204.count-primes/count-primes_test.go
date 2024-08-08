@@ -21,7 +21,7 @@ var tcs = []struct {
 }
 
 func Test_countPrimel(t *testing.T) {
-	countPrimes(1000)
+	countPrimes(2236)
 }
 func Test_countPrime(t *testing.T) {
 	s := map[int]int{}

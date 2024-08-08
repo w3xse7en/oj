@@ -1,37 +1,39 @@
 package _207_canFinish
 
+import (
+	"slices"
+)
+
+var okPath map[int]bool
+
 func canFinish(numCourses int, prerequisites [][]int) bool {
-	next := map[int][]int{}
-	for _, v := range prerequisites {
-		_, ok := next[v[1]]
-		if ok {
-			next[v[1]] = append(next[v[1]], v[0])
-		} else {
-			next[v[1]] = []int{v[0]}
-		}
+	mp := map[int][]int{}
+	okPath = map[int]bool{}
+	for _, prerequisite := range prerequisites {
+		a, b := prerequisite[0], prerequisite[1]
+		mp[a] = append(mp[a], b)
 	}
 
-	vis := make([]int, numCourses)
-	for v := range next {
-		if !checkLoop(vis, v, next) {
+	for k := range mp {
+		if dfs(k, []int{}, mp) {
 			return false
 		}
 	}
 	return true
 }
 
-func checkLoop(visit []int, v int, mp map[int][]int) bool {
-	if visit[v] == 1 {
+func dfs(ori int, visit []int, mp map[int][]int) bool {
+	if okPath[ori] {
 		return false
 	}
-	if visit[v] == -1 {
-		return true
-	}
-	for _, next := range mp[v] {
-		if !checkLoop(visit, next, mp) {
-			return false
+	okPath[ori] = true
+	for _, next := range mp[ori] {
+		if slices.Index(visit, next) != -1 {
+			return true
+		}
+		if dfs(next, append(visit, next), mp) {
+			return true
 		}
 	}
-	visit[v] = -1
-	return true
+	return false
 }

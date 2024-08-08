@@ -1,6 +1,6 @@
 package problem0204
 
-func countPrimes(n int) int {
+func countPrimes1(n int) int {
 	if n < 2 {
 		return 0
 	}
