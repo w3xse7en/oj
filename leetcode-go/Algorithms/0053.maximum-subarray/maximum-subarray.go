@@ -1,7 +1,7 @@
 package problem0053
 
 // dp[i] = max(dp[i],dp[i-1]+nums[i])
-func maxSubArray(nums []int) int {
+func maxSubArray1(nums []int) int {
 	result := nums[0]
 	for i := 1; i < len(nums); i++ {
 		nums[i] = max(nums[i], nums[i-1]+nums[i])

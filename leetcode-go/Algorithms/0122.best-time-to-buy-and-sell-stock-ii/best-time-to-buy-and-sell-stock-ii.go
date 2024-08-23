@@ -1,6 +1,6 @@
 package problem0122
 
-func maxProfit(prices []int) int {
+func maxProfit1(prices []int) int {
 	result := 0
 	for i := 0; i < len(prices); i++ {
 		tmp := prices[i]

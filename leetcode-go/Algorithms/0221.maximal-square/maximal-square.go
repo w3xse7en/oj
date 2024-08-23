@@ -1,6 +1,6 @@
 package problem0221
 
-func maximalSquare(matrix [][]byte) int {
+func maximalSquare1(matrix [][]byte) int {
 	var maxSquare byte = '0'
 	for x, raws := range matrix {
 		for y := range raws {
@@ -16,13 +16,6 @@ func maximalSquare(matrix [][]byte) int {
 	}
 	var result = int(maxSquare - '0')
 	return result * result
-}
-
-func min(a, b byte) byte {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 //var maxX, maxY, minXY int

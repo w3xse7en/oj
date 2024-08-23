@@ -8,7 +8,7 @@ type SortInt struct {
 	Min, Max int
 }
 
-func merge(intervals [][]int) [][]int {
+func merge1(intervals [][]int) [][]int {
 	if len(intervals) == 0 {
 		return nil
 	}

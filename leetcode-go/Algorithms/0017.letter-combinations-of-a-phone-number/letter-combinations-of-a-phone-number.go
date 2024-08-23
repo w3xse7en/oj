@@ -16,7 +16,7 @@ var mp = map[rune]string{
 	'9': "wxyz",
 }
 
-func letterCombinations(digits string) []string {
+func letterCombinations1(digits string) []string {
 	var result []string
 	for _, v := range digits {
 		var tmp []string

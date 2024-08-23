@@ -1,6 +1,6 @@
 package problem0006
 
-func convert(s string, numRows int) string {
+func convert1(s string, numRows int) string {
 	if len(s) <= numRows || numRows <= 1 {
 		return s
 	}

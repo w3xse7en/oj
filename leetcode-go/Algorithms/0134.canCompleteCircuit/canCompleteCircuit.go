@@ -1,29 +1,21 @@
 package _134_canCompleteCircuit
 
 func canCompleteCircuit(gas []int, cost []int) int {
-	i := 0
-	j := -1
-	remain := gas[0]
-	for cnt := 0; cnt < len(gas); cnt++ {
-		ni := newIdx(i+1, len(gas))
-		if remain-cost[i] < 0 {
-			j = ni
-			i = ni
-			cnt = 0
-			remain = gas[ni]
-		} else {
-			remain = remain - cost[i] + gas[ni]
+	n := len(gas)
+	idx, sum, total := -1, 0, 0
+	for i := 0; i < n; i++ {
+		sub := gas[i] - cost[i]
+		total += sub
+		sum += sub
+		if sum < 0 {
+			sum = 0
+			idx = -1
+		} else if sum >= 0 && idx == -1 {
+			idx = i
 		}
 	}
-	if i != j {
+	if idx < 0 || total < 0 {
 		return -1
-	}
-	return i
-}
-
-func newIdx(idx, length int) int {
-	if idx >= length {
-		return 0
 	}
 	return idx
 }
