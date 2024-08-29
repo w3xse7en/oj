@@ -1,6 +1,6 @@
 package problem1143
 
-func longestCommonSubsequence(text1 string, text2 string) int {
+func longestCommonSubsequence1(text1 string, text2 string) int {
 	m, n := len(text1)+1, len(text2)+1
 	dp := make([][]int, m)
 	for i := range dp {

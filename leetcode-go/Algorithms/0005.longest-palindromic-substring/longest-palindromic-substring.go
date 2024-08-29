@@ -1,7 +1,6 @@
 package problem0005
 
-//
-func longestPalindrome(s string) string {
+func longestPalindrome1(s string) string {
 	max, result := 0, ""
 	for k := range s {
 		i := 0
